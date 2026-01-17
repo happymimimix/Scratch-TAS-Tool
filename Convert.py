@@ -5,21 +5,20 @@ if ogdata.__contains__('\t'):
     splitdata = ogdata.splitlines()
     for line in  splitdata:
         linesplit = line.split('\t')
-        if linesplit[0] == 'C':
+        if linesplit[0][0] == 'C':
             sys.stdout.write('C\n'+linesplit[1]+'\n'+linesplit[2]+'\n'+linesplit[3]+'\n'+linesplit[4]+'\n')
-        elif linesplit[0] == 'K':
+        elif linesplit[0][0] == 'K':
             sys.stdout.write('K\n'+linesplit[1]+'\n'+linesplit[2]+'\n')
-        elif linesplit[0] == 'M':
+        elif linesplit[0][0] == 'M':
             sys.stdout.write('M\n'+linesplit[1]+'\n'+linesplit[2]+'\n')
-        elif linesplit[0] == 'W':
+        elif linesplit[0][0] == 'W':
             sys.stdout.write('W\n'+linesplit[1]+'\n')
-        elif linesplit[0] == 'F':
+        elif linesplit[0][0] == 'F':
             sys.stdout.write('F\n'+linesplit[1]+'\n')
-        elif linesplit[0] == 'V':
+        elif linesplit[0][0] == 'V':
             sys.stdout.write('V\n'+linesplit[1]+'\n')
         else:
-            for parameter in linesplit:
-                sys.stdout.write(parameter+'\n')
+            sys.stdout.write(linesplit[0]+'\n'+linesplit[1]+'\n'+linesplit[2]+'\n'+linesplit[3]+'\n'+linesplit[4]+'\n')
 else:
     pointer = 0
     splitdata = ogdata.splitlines()
@@ -43,5 +42,5 @@ else:
             sys.stdout.write('V\t' + splitdata[pointer + 1]+'\n')
             pointer += 2
         else:
-            sys.stdout.write(splitdata[pointer]+'\n')
-            pointer += 1
+            sys.stdout.write(splitdata[pointer]+splitdata[pointer+1]+'\t'+splitdata[pointer+2]+'\t'+splitdata[pointer+3]+'\t'+splitdata[pointer+4]+'\n')
+            pointer += 5
