@@ -30,16 +30,16 @@ else:
             sys.stdout.write('K\t'+splitdata[pointer+1]+'\t'+splitdata[pointer+2]+'\n')
             pointer += 3
         elif splitdata[pointer][0] == 'M':
-            sys.stdout.write('M\t' + splitdata[pointer + 1] + '\t' + splitdata[pointer + 2]+'\n')
+            sys.stdout.write('M\t'+splitdata[pointer+1]+'\t'+splitdata[pointer+2]+'\n')
             pointer += 3
         elif splitdata[pointer][0] == 'W':
-            sys.stdout.write('W\t' + splitdata[pointer + 1]+'\n')
+            sys.stdout.write('W\t'+splitdata[pointer+1]+'\n')
             pointer += 2
         elif splitdata[pointer][0] == 'F':
-            sys.stdout.write('F\t' + splitdata[pointer + 1]+'\n')
+            sys.stdout.write('F\t'+splitdata[pointer+1]+'\n')
             pointer += 2
         elif splitdata[pointer][0] == 'V':
-            sys.stdout.write('V\t' + splitdata[pointer + 1]+'\n')
+            sys.stdout.write('V\t'+splitdata[pointer+1]+'\n')
             pointer += 2
         else:
             sys.stdout.write(splitdata[pointer]+splitdata[pointer+1]+'\t'+splitdata[pointer+2]+'\t'+splitdata[pointer+3]+'\t'+splitdata[pointer+4]+'\n')
